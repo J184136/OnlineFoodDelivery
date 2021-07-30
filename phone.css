@@ -9,7 +9,7 @@
 }
 /* Home Section*/
 #home{
-    height: 370px;
+    height: 270px;
     flex-direction: column;
     padding: 3px 28px;
 }
