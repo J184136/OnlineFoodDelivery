@@ -6,6 +6,39 @@
     <title>Best Online Food Delivery in India | MyOnlineMeal.com</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="screen and (max-width: 1170px)" href="phone.css">
+    <script type="text/javascript">
+        function valid() 
+        {
+        var na = document.getElementById("name").value;
+        var em = document.getElementById("email").value.indexOf("@");
+        var mno = document.getElementById("Phone").value;
+        var msg= document.getElementById("message").value;
+        if(na==""||na==null)
+        {
+        alert("Enter The Name");
+        return false;
+        }
+        else if(em==-1) 
+        {  
+        alert("E-mail ID is not valid");
+        return false;
+        }
+        else if(mno==""||mno==null)
+        {
+        alert("Enter The Phone No");
+        return false;
+        }
+        else if(isNaN(mno)||mno.length>10||mno.length<10)
+        {
+        alert("The mobile no. always has 10 digit numerical value");
+        return false;
+        }
+        else{
+        alert("The Student Information Submitted Successfully");
+        Response.redirect('https://j184136.github.io/OnlineFoodDelivery/index.html')
+        }
+        }
+        </script>
 </head>
 <body>
     <nav id="navbar">
@@ -71,7 +104,7 @@
 <section id="contact">
     <h1 class="h-primary center">Contact us</h1>
     <div id="contact-box">
-        <form action="">
+        <form  action="" onsubmit="return valid()" method="post" id="myForm">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name">
@@ -88,6 +121,7 @@
                 <label for="name">Message</label>
                 <textarea name="message" id="message" cols="30" rows="5"></textarea>
             </div>
+            <input type="submit" value="Submit" style="margin-top: 10px;">
         </form>
     </div>
 </section>
